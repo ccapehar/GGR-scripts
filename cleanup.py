@@ -31,5 +31,5 @@ df.to_excel(filename+file_addition_cleaned+extension, index=False)
 df = pd.read_excel(filename+file_addition_cleaned+extension)
 total_missing = df.isnull().sum()
 
-print(total_missing)
+# print(total_missing)
 total_missing.to_excel(filename+file_addition_missing+extension)

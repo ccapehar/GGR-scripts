@@ -70,7 +70,7 @@ def clear_duplicates(path, filename_addition):
 def walk_directory(path, filename_addition):
     for root, dirs, files in os.walk(path):
         for file in files:
-            if 'Cations&Anions_Merge' in file:
+            if 'Cations&Anions' in file:
                 os.chdir(root)
                 try:
                     make_new_excel_file(file, filename_addition)
@@ -100,9 +100,9 @@ ult_file_addition = '_Combined'
 ult_name = 'Laura_ICICP merge'
 ultimate_filename = ult_name+ult_file_addition+file_extension
 
-# clear_duplicates(path, filename_addition)
+clear_duplicates(path, filename_addition)
 
-# walk_directory(path, filename_addition)
+walk_directory(path, filename_addition)
 
 ultimate_merge(path, filename_addition, ultimate_filename)
 
