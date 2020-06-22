@@ -10,7 +10,7 @@ def function(x):
     if type(x) is not str:
         # x = 'good input'
         return x
-    elif '< ' not in x and '<' not in x:
+    elif not any(i in x for i in ('< ', '<')):
         x = ''
         return x 
     else:
