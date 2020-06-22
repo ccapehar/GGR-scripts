@@ -25,6 +25,7 @@ with open(filename +file_addition_duplicate+'.txt', 'w') as f:
 df = df.drop_duplicates()
 
 df = df.replace(regex='<.+', value='')
+df = df.replace('O/R', '')
 
 df.to_excel(filename+file_addition_cleaned+extension, index=False)
 
