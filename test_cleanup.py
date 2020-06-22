@@ -10,11 +10,12 @@ def function(x):
     if type(x) is not str:
         # x = 'good input'
         return x
-    elif '< ' not in x:
+    elif '< ' not in x and '<' not in x:
         x = ''
         return x 
     else:
         x = x.replace('< ', '')
+        x = x.replace('<', '')
         x = float(x)
         x =  x/2
         return x
