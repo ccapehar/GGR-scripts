@@ -27,6 +27,12 @@ df = df.drop_duplicates()
 df = df.replace(regex='<.+', value='')
 df = df.replace('O/R', '')
 
+x = df.loc[:, ['Date of sampling']]
+
+x = pd.to_datetime(x.stack(), errors = 'coerce').unstack()
+
+df['Date of sampling'] = x
+
 df.to_excel(filename+file_addition_cleaned+extension, index=False)
 
 df = pd.read_excel(filename+file_addition_cleaned+extension)
